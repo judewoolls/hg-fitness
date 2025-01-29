@@ -56,4 +56,18 @@ nav {
     background-color: var(--light-green-yellow-accent);
 }
 
+.card {
+    background-color: var(--secondary-color);
+}
 
+#track-progress-card {
+    border-color: var(--light-green-yellow-accent);
+}
+
+#book-session-card {
+    border-color: var(--light-blue-accent);
+}
+
+#contact-us-card {
+border-color: var(--eccentric-color);
+}
