@@ -20,10 +20,12 @@ from django.urls import path
 from homepage.views import home
 from booking.views import booking
 from feedback.views import feedback
+from inbox.views import render_inbox
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('booking/', booking, name='booking'),
     path('feedback/', feedback, name='feedback'),
+    path('inbox/', render_inbox, name='inbox'),
 ]

@@ -1,0 +1,24 @@
+/* Define CSS variables for the color scheme */
+:root {
+    --primary-color: #1DB954; /* Neon Green */
+    --secondary-color: #121212; /* Deep Black */
+    --accent-color: #636262; /* Muted Gray */
+    --background-color: #181818; /* Dark Gray */
+    --text-color: #ffffff; /* White */
+    --highlight-color: #ff4081; /* Pink */
+    --border-color: #282828; /* Darker Gray */
+    --light-blue-accent: #50C4ED; /* Vibrant Cyan-Blue */
+    --light-green-yellow-accent: #DFFF75; /* Soft Neon Yellow-Green */
+    --eccentric-color: #E04BFC; /* Bright Pink */
+}
+
+.card {
+    background-color: var(--secondary-color);
+    color: var(--light-blue-accent);
+    border: 1px solid var(--light-blue-accent);
+}
+
+h1 {
+    color: var(--light-blue-accent);
+    text-align: center;
+}

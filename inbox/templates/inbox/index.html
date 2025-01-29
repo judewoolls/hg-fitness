@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/inbox_style.css' %}">
+{% endblock styles%}
+
+
+
+{% block content %}
+<main>
+    {% for chat in chats %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Inbox</h1>
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">User Name</h5>
+                      <p class="card-text">This is a snippet of the message</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</main>
+{% endblock content %}
