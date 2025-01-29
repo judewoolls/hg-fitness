@@ -7,6 +7,9 @@
     --text-color: #ffffff; /* White */
     --highlight-color: #ff4081; /* Pink */
     --border-color: #282828; /* Darker Gray */
+    --light-blue-accent: #50C4ED; /* Vibrant Cyan-Blue */
+    --light-green-yellow-accent: #DFFF75; /* Soft Neon Yellow-Green */
+    --eccentric-color: #E04BFC; /* Bright Pink */
 }
 
 body {
@@ -19,12 +22,16 @@ nav {
     border-bottom: 1px solid var(--border-color); /* Darker Gray border */
 }
 
-.navbar-brand, .nav-link, .navbar-collapse {
-    color: var(--primary-color) !important; /* Neon Green */
+.navbar-brand, .nav-link {
+    color: var(--light-green-yellow-accent) !important; /* Neon Green */
 }
 
 .nav-link:hover {
     color: var(--highlight-color) !important; /* Muted Gray on hover */
+}
+
+.btn:hover {
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -36,3 +43,17 @@ nav {
     background-color: var(--highlight-color);
     border-color: var(--highlight-color);
 }
+
+.eccentric-pink-button {
+    background-color: var(--eccentric-color);
+}
+
+.light-blue-button {
+    background-color: var(--light-blue-accent);
+}
+
+.neon-yellow-button {
+    background-color: var(--light-green-yellow-accent);
+}
+
+
