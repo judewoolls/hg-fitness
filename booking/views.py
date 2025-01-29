@@ -3,5 +3,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def home(request):
+def booking(request):
     return render(request, 'booking/index.html')

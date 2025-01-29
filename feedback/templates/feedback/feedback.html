@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="container mt-5">
+    <section class="text-center mb-5">
+        <h1 class="display-4" style="color: var(--primary-color);">We Value Your Feedback</h1>
+        <p class="lead" style="color: var(--accent-color);">Let us know how we can improve your experience.</p>
+        <a href="#" class="btn btn-primary">Submit Feedback</a>
+    </section>
+
+    <section class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: var(--secondary-color);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--text-color);">Trainer Feedback</h5>
+                    <p class="card-text" style="color: var(--accent-color);">Feedback on your sessions from your trainer</p>
+                    <a href="#" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: var(--secondary-color);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--text-color);">Diet Feedback</h5>
+                    <p class="card-text" style="color: var(--accent-color);">Lets review and talk through your diet</p>
+                    <a href="#" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: var(--secondary-color);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--text-color);">Suggestions</h5>
+                    <p class="card-text" style="color: var(--accent-color);">Have any suggestions? We'd love to hear them.</p>
+                    <a href="#" class="btn btn-primary">Give Feedback</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

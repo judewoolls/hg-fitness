@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<main class="container mt-5">
+    <section class="text-center mb-5">
+        <h1 class="display-4" style="color: var(--primary-color);">Welcome to HG Fitness</h1>
+        <p class="lead" style="color: var(--accent-color);">Your journey to a healthier life starts here.</p>
+        <a href="#" class="btn btn-primary">Get Started</a>
+    </section>
+
+    <section class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: var(--secondary-color);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--text-color);">Track Your Progress</h5>
+                    <p class="card-text" style="color: var(--accent-color);">Monitor your workouts and see your improvements over time.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: var(--secondary-color);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--text-color);">Book a Session</h5>
+                    <p class="card-text" style="color: var(--accent-color);">Schedule your training sessions with our expert coaches.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: var(--secondary-color);">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: var(--text-color);">Contact Us</h5>
+                    <p class="card-text" style="color: var(--accent-color);">Have questions? Get in touch with our support team.</p>
+                    <a href="#" class="btn btn-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
