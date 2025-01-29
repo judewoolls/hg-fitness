@@ -1,0 +1,38 @@
+/* Define CSS variables for the color scheme */
+:root {
+    --primary-color: #1DB954; /* Neon Green */
+    --secondary-color: #121212; /* Deep Black */
+    --accent-color: #636262; /* Muted Gray */
+    --background-color: #181818; /* Dark Gray */
+    --text-color: #ffffff; /* White */
+    --highlight-color: #ff4081; /* Pink */
+    --border-color: #282828; /* Darker Gray */
+}
+
+body {
+    background-color: var(--background-color); /* Dark Gray */
+    color: var(--text-color); /* White text for better contrast */
+}
+
+nav {
+    background-color: var(--secondary-color); /* Deep Black */
+    border-bottom: 1px solid var(--border-color); /* Darker Gray border */
+}
+
+.navbar-brand, .nav-link, .navbar-collapse {
+    color: var(--primary-color) !important; /* Neon Green */
+}
+
+.nav-link:hover {
+    color: var(--highlight-color) !important; /* Muted Gray on hover */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--highlight-color);
+    border-color: var(--highlight-color);
+}
