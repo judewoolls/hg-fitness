@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 
 from homepage.views import home
 from booking.views import booking
@@ -29,4 +30,5 @@ urlpatterns = [
     path('feedback/', feedback, name='feedback'),
     path('inbox/', render_inbox, name='inbox'),
     path('inbox/view_chat/<int:chat_id>', render_chat, name='chat'),
+    path('accounts/', include('allauth.urls')),  # Add this line
 ]
