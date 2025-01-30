@@ -20,7 +20,7 @@ from django.urls import path
 from homepage.views import home
 from booking.views import booking
 from feedback.views import feedback
-from inbox.views import render_inbox
+from inbox.views import render_inbox, render_chat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,5 @@ urlpatterns = [
     path('booking/', booking, name='booking'),
     path('feedback/', feedback, name='feedback'),
     path('inbox/', render_inbox, name='inbox'),
+    path('inbox/view_chat', render_chat, name='chat'),
 ]
