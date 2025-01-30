@@ -16,9 +16,20 @@
     background-color: var(--secondary-color);
     color: var(--light-blue-accent);
     border: 1px solid var(--light-blue-accent);
+    margin-bottom: 5px;
 }
 
 h1 {
     color: var(--light-blue-accent);
     text-align: center;
+}
+
+.eccentric {
+    color: var(--eccentric-color);
+    border-color: var(--eccentric-color);
+}
+
+.light-green {
+    color: var(--light-green-yellow-accent);
+    border-color: var(--light-green-yellow-accent);
 }

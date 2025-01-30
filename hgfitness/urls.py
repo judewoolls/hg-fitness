@@ -28,5 +28,5 @@ urlpatterns = [
     path('booking/', booking, name='booking'),
     path('feedback/', feedback, name='feedback'),
     path('inbox/', render_inbox, name='inbox'),
-    path('inbox/view_chat', render_chat, name='chat'),
+    path('inbox/view_chat/<int:chat_id>', render_chat, name='chat'),
 ]

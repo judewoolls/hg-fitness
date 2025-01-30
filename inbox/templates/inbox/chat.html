@@ -7,20 +7,41 @@
 {% endblock styles%}
 
 {% block content %}
-<main>
-    <div class="container">
-        <div class="row">
-            {% for message in messages %}
-            <div class="card">
-                <div class="card-header" style="color: white;">
-                    {{ message.sender.username }}
-                </div>
-                <div class="card-body">
-                    <p class="card-text" style="color: white;">{{ message.body }}</p>
-                </div>
+<main class="container">
+    {% if user == chat.coach %}
+    <h1>Chat with {{ chat.user.username }}</h1>
+    {% else %}
+    <h1>Chat with {{ chat.coach.username }}</h1>
+    {% endif %}
+    <section class="text-center mb-5">
+
+        {% for message in messages %}
+        {% if message.sender == user %}
+        <div class="card text-end eccentric">
+            <div class="card-header">
+                {{ message.sender.username }}
             </div>
-            {% endfor %}
+            <div class="card-body">
+                <p class="card-text">{{ message.body }}</p>
+            </div>
         </div>
-    </div>
+        {% else %}
+        <div class="card text-start light-green">
+            <div class="card-header">
+                {{ message.sender.username }}
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ message.body }}</p>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Send</button>
+        </form>
+    </section>
 </main>
 {% endblock content %}
