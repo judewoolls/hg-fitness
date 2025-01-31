@@ -48,12 +48,28 @@ nav {
     background-color: var(--eccentric-color);
 }
 
+.eccentric-pink-button:hover {
+    border-color: var(--eccentric-color);
+    color: var(--eccentric-color);
+}
+
+
 .light-blue-button {
     background-color: var(--light-blue-accent);
 }
 
+.light-blue-button:hover {
+    border-color: var(--light-blue-accent);
+    color: var(--light-blue-accent);
+}
+
 .neon-yellow-button {
     background-color: var(--light-green-yellow-accent);
+}
+
+.neon-yellow-button:hover {
+    border-color: var(--light-green-yellow-accent);
+    color: var(--light-green-yellow-accent);
 }
 
 .card {
