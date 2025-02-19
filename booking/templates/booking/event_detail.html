@@ -2,9 +2,13 @@
 {% block title %}
 ClassFit | {{ event.event_name }}
 {% endblock title %}
-{% block content %}
-{% load static %}
 
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/booking.css' %}">
+{% endblock styles%}
+
+{% block content %}
 <div class="container">
     <div class="row">
         <div class="col card mb-4 mt-3 top text-bg-dark" aria-labelledby="event-title" style="background-color: var(--secondary-color); border-color: var(--border-color);">

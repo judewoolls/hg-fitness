@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+
+
 {% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/booking.css' %}">
+{% endblock styles%}
 
 {% block content %}
 <h1>Edit Class</h1>
