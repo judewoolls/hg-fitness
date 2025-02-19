@@ -24,8 +24,8 @@ from inbox.views import render_inbox, render_chat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),  # Add this line
-    path('booking/', booking, name='booking'),
+    path('accounts/', include('allauth.urls')),
+    path('booking/', include('booking.urls'), name='booking-urls'),
     path('feedback/', feedback, name='feedback'),
     path('inbox/', render_inbox, name='inbox'),
     path('inbox/view_chat/<int:chat_id>', render_chat, name='chat'),
