@@ -20,6 +20,14 @@ ClassFit | Classes | {{ current_date }}
             <h2 class="display-5 m-0" id="date-heading">{{ current_date }}</h2>
             <button class="btn btn-secondary ms-2" onclick="navigateTo('{{ next_date }}')" aria-label="Next Date">></button>
         </div>
+        {% if is_coach %}
+        <div id="add-event-button">
+            <form action="{% url 'create_event' %}" method="get">
+                {% csrf_token %}
+                <button type="submit" class="btn light-blue-button" a-label="Add Event">Add Event</button>
+            </form>
+        </div>
+        {% endif %}
         <!-- Event Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">

@@ -5,13 +5,19 @@ from django.views import generic
 from datetime import timedelta, datetime
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-#from .forms import EventForm
+from .forms import EventForm
 
 # Create your views here.
 
 def booking(request):
     return render(request, 'booking/index.html')
 
+
+def is_coach(user):
+    if user.username == 'judewoolls':
+        return True
+    else:
+        return False
 
 @login_required
 def event_detail(request, id, date):
@@ -22,7 +28,8 @@ def event_detail(request, id, date):
     return render(
         request,
         "booking/event_detail.html",
-        {"event": event}
+        {"event": event,
+         "is_coach": is_coach(request.user)}
     )
 
 
@@ -51,6 +58,7 @@ def event_search(request, date):
         "current_date": current_date,
         "previous_date": previous_date,
         "next_date": next_date,
+        "is_coach": is_coach(request.user)
     })
 
 
@@ -99,44 +107,44 @@ def delete_event(request, event_id):
     return redirect('event_search', date=event.date_of_event)
 
 
-# @login_required
-# def create_event(request):
-#     if request.method == 'POST':
-#         form = EventForm(request.POST)
-#         if form.is_valid():
-#             event = form.save(commit=False)
-#             event.coach = Coach.objects.get(coach=request.user)
-#             event.save()
-#             messages.success(request, "Event created successfully")
-#             return redirect('event_search', date=event.date_of_event)
-#         else:
-#             print(form.errors)  # Debugging information
-#     else:
-#         form = EventForm()
-#     return render(
-#         request,
-#         "booking/create_event.html",
-#         {"coaches": Coach.objects.filter(coach=request.user),
-#          'form': form}
-#     )
+@login_required
+def create_event(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save(commit=False)
+            event.save()
+            messages.success(request, "Event created successfully")
+            return redirect('event_search', date=event.date_of_event)
+        else:
+            print(form.errors)  # Debugging information
+    else:
+        form = EventForm()
+    return render(
+        request,
+        "booking/create_event.html",
+        {"is_coach": is_coach(request.user),
+         'form': form}
+    )
 
 
-# @login_required
-# def edit_event(request, event_id):
-#     event = get_object_or_404(Event, pk=event_id)
-#     if request.method == 'POST':
-#         form = EventForm(request.POST, instance=event)
-#         if form.is_valid():
-#             event = form.save()
-#             messages.success(request, "Event updated successfully")
-#             return redirect('event_search', date=event.date_of_event)
-#         else:
-#             print(form.errors)  # Debugging information
-#     else:
-#         form = EventForm(instance=event)
-#     return render(
-#         request,
-#         "booking/edit_event.html",
-#         {"event": event,
-#          'form': form}
-#     )
+@login_required
+def edit_event(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    if request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            messages.success(request, "Event updated successfully")
+            return redirect('event_search', date=event.date_of_event)
+        else:
+            print(form.errors)  # Debugging information
+    else:
+        form = EventForm(instance=event)
+    return render(
+        request,
+        "booking/edit_event.html",
+        {"event": event,
+         'form': form,
+         "is_coach": is_coach(request.user)}
+    )

@@ -21,15 +21,15 @@ ClassFit | {{ event.event_name }}
                 <p class="card-text" style="color: var(--text-color);">
                     {{ event.description | safe }}
                 </p>
-                <a href="{% url 'event_search' event.date_of_event %}" aria-label="Back to event search">
-                    <div class="btn btn-secondary" style="background-color: var(--accent-color); border-color: var(--accent-color);">Back</div>
-                </a>
                 {% if is_coach %}
                 <form action="{% url 'edit_event' event.id %}" method="get" id="edit-event-button">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-info" aria-label="Edit event" style="background-color: var(--highlight-color); border-color: var(--highlight-color);">Edit</button>
+                    <button type="submit" class="btn" aria-label="Edit event" style="background-color: var(--highlight-color); border-color: var(--highlight-color);">Edit</button>
                 </form>
                 {% endif %}
+                <a href="{% url 'event_search' event.date_of_event %}" aria-label="Back to event search">
+                    <div class="btn btn-secondary" style="background-color: var(--accent-color); border-color: var(--accent-color);">Back</div>
+                </a>
             </div>
         </div>
     </div>
