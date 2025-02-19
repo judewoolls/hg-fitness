@@ -19,6 +19,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ chat.user }}</h5>
                       <p class="card-text">This is a snippet of the message</p>
+                      <a href="{% url 'chat' chat.chat_id %}">Open</a>
                     </div>
                 </div>
             </div>
