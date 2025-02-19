@@ -17,7 +17,7 @@ ClassFit | {{ event.event_name }}
                     <h1 class="post-title" id="event-title">{{ event.event_name }}</h1>
                     <h4>{{event.date_of_event}} | {{ event.start_time }} until {{event.end_time}}</h4>
                     <!-- Post author goes before the | the post's created date goes after -->
-                    <p class="post-subtitle">Coach: <strong>{{ event.coach }}</strong></p>
+                    <p class="post-subtitle">Coach: <strong>Hannah</strong></p>
                 </div>
                 <p class="card-text">
                     {{ event.description | safe }}
@@ -51,3 +51,7 @@ ClassFit | {{ event.event_name }}
     </div>
 </div>
 {% endblock unauthorised_content %}
+
+{% block scripts %}
+<script src="{% static 'scripts/script.js' %}"></script>
+{% endblock scripts %}

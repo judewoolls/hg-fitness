@@ -6,6 +6,10 @@ ClassFit | Classes | {{ current_date }}
 
 {% load static %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/booking.css' %}">
+{% endblock styles %}
+
 {% block content %}
 
 <!-- index.html content starts here -->
@@ -16,14 +20,6 @@ ClassFit | Classes | {{ current_date }}
             <h2 class="display-5 m-0" id="date-heading">{{ current_date }}</h2>
             <button class="btn btn-secondary ms-2" onclick="navigateTo('{{ next_date }}')" aria-label="Next Date">></button>
         </div>
-        {% if is_coach %}
-        <div id="add-event-button">
-            <form action="{% url 'create_event' %}" method="get">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-info" aria-label="Add Event">Add Event</button>
-            </form>
-        </div>
-        {% endif %}
         <!-- Event Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -32,11 +28,6 @@ ClassFit | Classes | {{ current_date }}
                 <div class="col-md-4">
                     <div class="card text-bg-dark mb-4" aria-labelledby="event-title-{{ event.id }}">
                         <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: <strong>{{ event.coach }}</strong></p>
-                                </div>
-                            </div>
                             <a href="{% url 'event_detail' current_date event.id %}" class="event-title" id="event-title-{{ event.id }}" aria-label="Event Details">
                                 <h2 class="card-title">{{ event.event_name }}</h2>
                             </a>
@@ -61,7 +52,7 @@ ClassFit | Classes | {{ current_date }}
                                     <form action="{% url 'book_event' event.id %}" method="POST">
                                         {% csrf_token %}
                                         <input type="hidden" name="event_id" value="{{ event.id }}">
-                                        <button type="submit" class="btn btn-info" aria-label="Book Event">Book</button>
+                                        <button type="submit" class="btn light-blue-button" aria-label="Book Event">Book</button>
                                     </form>
                                     {% else %}
                                     <p>Class is currently full</p>
@@ -84,3 +75,7 @@ ClassFit | Classes | {{ current_date }}
 </div>
 
 {% endblock %}
+
+{% block scripts %}
+<script src="{% static 'scripts/script.js' %}"></script>
+{% endblock scripts %}
