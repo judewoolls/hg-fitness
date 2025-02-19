@@ -7,7 +7,7 @@
         <h1 class="display-4" style="color: var(--primary-color);">Book Your Session</h1>
         <p class="lead" style="color: var(--accent-color);">Choose from a variety of fitness sessions to suit your needs.</p>
         {% if user.is_authenticated %}
-        <button class="btn btn-primary" onclick="navigateToCurrentDate()" aria-label="Classes">Check Availability</button>
+        <button class="btn btn-primary-color" onclick="navigateToCurrentDate()" aria-label="Classes">Check Availability</button>
         {% else %}
         <button class="nav-link" href="{% url 'account_login' %}" aria-label="Classes">Classes</button>
         {% endif %}

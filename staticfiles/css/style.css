@@ -34,14 +34,16 @@ nav {
     cursor: pointer;
 }
 
-.btn-primary {
+.btn-primary-color {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    color: var(--text-color);
 }
 
-.btn-primary:hover {
+.btn-primary-color:hover {
     background-color: var(--highlight-color);
     border-color: var(--highlight-color);
+    color: var(--text-color);
 }
 
 .eccentric-pink-button {

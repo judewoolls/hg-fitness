@@ -5,30 +5,29 @@ ClassFit | {{ event.event_name }}
 {% block content %}
 {% load static %}
 
-
 <div class="container">
     <div class="row">
-        <div class="col card mb-4 mt-3 top text-bg-dark" aria-labelledby="event-title">
+        <div class="col card mb-4 mt-3 top text-bg-dark" aria-labelledby="event-title" style="background-color: var(--secondary-color); border-color: var(--border-color);">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <div class="col-md-12 masthead-text">
                     <!-- Post title goes in these h1 tags -->
-                    <h1 class="post-title" id="event-title">{{ event.event_name }}</h1>
-                    <h4>{{event.date_of_event}} | {{ event.start_time }} until {{event.end_time}}</h4>
+                    <h1 class="post-title" id="event-title" style="color: var(--primary-color);">{{ event.event_name }}</h1>
+                    <h4 style="color: var(--accent-color);">{{event.date_of_event}} | {{ event.start_time }} until {{event.end_time}}</h4>
                     <!-- Post author goes before the | the post's created date goes after -->
-                    <p class="post-subtitle">Coach: <strong>Hannah</strong></p>
+                    <p class="post-subtitle" style="color: var(--text-color);">Coach: <strong>Hannah</strong></p>
                 </div>
-                <p class="card-text">
+                <p class="card-text" style="color: var(--text-color);">
                     {{ event.description | safe }}
                 </p>
                 <a href="{% url 'event_search' event.date_of_event %}" aria-label="Back to event search">
-                    <div class="btn btn-secondary">Back</div>
+                    <div class="btn btn-secondary" style="background-color: var(--accent-color); border-color: var(--accent-color);">Back</div>
                 </a>
                 {% if is_coach %}
                 <form action="{% url 'edit_event' event.id %}" method="get" id="edit-event-button">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-info" aria-label="Edit event">Edit</button>
+                    <button type="submit" class="btn btn-info" aria-label="Edit event" style="background-color: var(--highlight-color); border-color: var(--highlight-color);">Edit</button>
                 </form>
                 {% endif %}
             </div>
@@ -36,17 +35,17 @@ ClassFit | {{ event.event_name }}
     </div>
 </div>
 
-{% endblock content %}{% load static %}
+{% endblock content %}
 
 {% block unauthorised_content %}
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1>Welcome to ClassFit</h1>
-            <p>ClassFit is a platform that helps you find and book fitness classes in your area.</p>
-            <p>Sign up or log in to get started.</p>
-            <a href="{% url 'account_signup' %}" class="btn btn-primary">Sign Up</a>
-            <a href="{% url 'account_login' %}" class="btn btn-secondary">Log In</a>
+            <h1 style="color: var(--primary-color);">Welcome to ClassFit</h1>
+            <p style="color: var(--text-color);">ClassFit is a platform that helps you find and book fitness classes in your area.</p>
+            <p style="color: var(--text-color);">Sign up or log in to get started.</p>
+            <a href="{% url 'account_signup' %}" class="btn btn-primary" style="background-color: var(--primary-color); border-color: var(--primary-color);">Sign Up</a>
+            <a href="{% url 'account_login' %}" class="btn btn-secondary" style="background-color: var(--accent-color); border-color: var(--accent-color);">Log In</a>
         </div>
     </div>
 </div>
